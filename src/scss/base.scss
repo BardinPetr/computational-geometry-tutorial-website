@@ -1,0 +1,115 @@
+@import '~materialize-css';
+@import 'font.scss';
+
+$primary-color: color("deep-purple", "accent-3");
+$primary-color-light: false !default;
+$primary-color-dark: false !default;
+
+@if not $primary-color-light {
+  $primary-color-light: lighten($primary-color, 15%);
+}
+
+@if not $primary-color-dark {
+  $primary-color-dark: darken($primary-color, 15%);
+}
+
+$secondary-color: color("teal", "lighten-1") !default;
+$success-color: color("green", "base") !default;
+$error-color: color("red", "base") !default;
+
+$link-color: color("light-blue", "darken-1") !default;
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.top-nav {
+  padding-left: 300px
+}
+
+#lesson-frame {
+  border: none;
+  padding: 0px
+}
+
+.collection-item {
+  word-break: break-all;
+  height: auto;
+}
+
+.menu-lesson-name {
+  @extend .waves-effect;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  height: fit-content !important;
+  line-height: 20px !important;
+  float: left;
+}
+
+#slide-out::-webkit-scrollbar {
+  display: none;
+}
+
+.letovo-header {
+  @extend .background;
+  @extend .user-view;
+  @extend .center;
+  padding: 10px !important;
+}
+
+.letovo-logo {
+  max-width: 80%;
+  object-fit: scale-down;
+}
+
+
+header,
+main,
+footer {
+  padding-left: 300px;
+}
+
+.sidenav .user-view .background,
+.uv-li {
+  height: 100px;
+  justify-content: space-around;
+  display: flex;
+}
+
+.nav-card-text {
+  word-break: break-all;
+}
+
+.sidenav li {
+  line-height: normal;
+}
+
+.container-main {
+  padding-left: 300px;
+}
+
+.top-nav {
+  padding-left: 20px;
+}
+
+@media only screen and (max-width : 992px) {
+  .container-main {
+    padding-left: 0;
+  }
+
+  .top-nav {
+    padding-left: 0;
+  }
+
+  .background {
+    justify-content: space-around;
+    display: flex;
+  }
+
+  header,
+  main,
+  footer {
+    padding-left: 0;
+  }
+}
