@@ -18,11 +18,23 @@ module.exports = {
         },
       },
         'css-loader',
-        // 'postcss-loader',
-        'sass-loader',
-        // 'style-loader',
+        'sass-loader'
       ],
-    },]
+    },
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env']
+        }
+      }
+    },
+    {
+      test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/,
+      loader: 'url-loader?limit=100000'
+    }]
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -40,7 +52,6 @@ module.exports = {
   ],
   devServer: {
     contentBase: path.join(__dirname),
-    compress: true,
     host: '0.0.0.0',
     port: 9000
   }

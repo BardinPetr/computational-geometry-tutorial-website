@@ -1,6 +1,6 @@
 import './scss/base.scss';
-import $ from "jquery";
 import 'materialize-css';
+import $ from "jquery";
 
 const lessons = [
   {
@@ -71,18 +71,16 @@ const menu_course_template = (e) => `
 </li>`;
 
 $(document).ready(function () {
-  // M.AutoInit();
+  M.AutoInit();
 
-  const sidenav = $('#sidenav').sidenav; //M.Sidenav.getInstance(document.querySelectorAll('.sidenav')[0]);
-  console.log(sidenav);
+  const sidenav = M.Sidenav.getInstance($(".sidenav"));
 
   lessons.sort((x, y) => x.difficulty - y.difficulty).forEach(e => {
     e.id = Math.ceil(Math.random() * 100000);
     $("#slide-out").append(menu_course_template(e));
     $(`#c-item-li-${e.id}`).click(() => {
-      $("#lesson-frame").prop('src', `${window.location.origin}/assets/pages/${e.href}`);
-      console.log(sidenav);
-      sidenav.close();
+      $("iframe").prop('src', `${window.location.origin}/assets/pages/${e.href}`);
+      if (window.innerWidth < 992) sidenav.close();
     });
   });
 });

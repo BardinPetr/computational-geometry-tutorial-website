@@ -1,36 +1,33 @@
 @import '~materialize-css';
 @import 'font.scss';
 
-$primary-color: color("deep-purple", "accent-3");
-$primary-color-light: false !default;
-$primary-color-dark: false !default;
-
-@if not $primary-color-light {
-  $primary-color-light: lighten($primary-color, 15%);
-}
-
-@if not $primary-color-dark {
-  $primary-color-dark: darken($primary-color, 15%);
-}
-
+$primary-color: color("deep-purple", "accent-3") !important;
 $secondary-color: color("teal", "lighten-1") !default;
 $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
-
 $link-color: color("light-blue", "darken-1") !default;
 
-.container {
-  margin: 0 auto;
-  width: 100%;
+header,
+main,
+footer {
+  margin-left: 300px;
+}
+
+.container-main {
+  margin-left: 300px;
+
+  iframe {
+    border: none;
+    padding: 0px
+  }
 }
 
 .top-nav {
-  padding-left: 300px
-}
+  margin-left: 300px;
 
-#lesson-frame {
-  border: none;
-  padding: 0px
+  .brand-logo {
+    padding-left: 10px;
+  }
 }
 
 .collection-item {
@@ -51,55 +48,50 @@ $link-color: color("light-blue", "darken-1") !default;
   display: none;
 }
 
-.letovo-header {
-  @extend .background;
-  @extend .user-view;
-  @extend .center;
-  padding: 10px !important;
+.sidenav {
+
+  .user-view .background,
+  .uv-li {
+    justify-content: space-around;
+    background-color: $primary-color;
+    display: flex;
+    height: 100px;
+
+    div {
+      @extend .background;
+      @extend .user-view;
+      @extend .center;
+      padding: 10px !important;
+
+      img {
+        max-width: 80%;
+        object-fit: scale-down;
+      }
+    }
+  }
+
+  li {
+    line-height: normal;
+  }
 }
 
-.letovo-logo {
-  max-width: 80%;
-  object-fit: scale-down;
-}
 
-
-header,
-main,
-footer {
-  padding-left: 300px;
-}
-
-.sidenav .user-view .background,
-.uv-li {
-  height: 100px;
-  justify-content: space-around;
-  display: flex;
-}
-
-.nav-card-text {
-  word-break: break-all;
-}
-
-.sidenav li {
-  line-height: normal;
-}
-
-.container-main {
-  padding-left: 300px;
-}
-
-.top-nav {
-  padding-left: 20px;
+.slideout-close-button {
+  display: none;
 }
 
 @media only screen and (max-width : 992px) {
+  .slideout-close-button {
+    cursor: pointer;
+    display: block;
+  }
+
   .container-main {
-    padding-left: 0;
+    margin-left: 0;
   }
 
   .top-nav {
-    padding-left: 0;
+    margin-left: 0;
   }
 
   .background {
@@ -110,6 +102,125 @@ footer {
   header,
   main,
   footer {
-    padding-left: 0;
+    margin-left: 0;
+  }
+}
+
+@import '~materialize-css';
+@import 'font.scss';
+
+$primary-color: color("deep-purple", "accent-3") !important;
+$primary-color-light: false !default;
+$primary-color-dark: false !default;
+
+@if not $primary-color-light {
+  $primary-color-light: lighten($primary-color, 15%);
+}
+
+@if not $primary-color-dark {
+  $primary-color-dark: darken($primary-color, 15%);
+}
+
+$secondary-color: color("teal", "lighten-1") !default;
+$success-color: color("green", "base") !default;
+$error-color: color("red", "base") !default;
+
+$link-color: color("light-blue", "darken-1") !default;
+
+
+header,
+main,
+footer {
+  margin-left: 300px;
+}
+
+.container-main {
+  margin-left: 300px;
+
+  iframe {
+    border: none;
+    padding: 0px
+  }
+}
+
+.top-nav {
+  margin-left: 300px;
+
+  .brand-logo {
+    padding-left: 10px;
+  }
+}
+
+.collection-item {
+  word-break: break-all;
+  height: auto;
+}
+
+.menu-lesson-name {
+  @extend .waves-effect;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  height: fit-content !important;
+  line-height: 20px !important;
+  float: left;
+}
+
+#slide-out::-webkit-scrollbar {
+  display: none;
+}
+
+.sidenav {
+
+  .user-view .background,
+  .uv-li {
+    justify-content: space-around;
+    display: flex;
+    height: 100px;
+
+    div {
+      @extend .background;
+      @extend .user-view;
+      @extend .center;
+      padding: 10px !important;
+
+      img {
+        max-width: 80%;
+        object-fit: scale-down;
+      }
+    }
+  }
+
+  li {
+    line-height: normal;
+  }
+}
+
+
+.slideout-close-button {
+  display: none;
+}
+
+@media only screen and (max-width : 992px) {
+  .slideout-close-button {
+    display: block;
+  }
+
+  .container-main {
+    margin-left: 0;
+  }
+
+  .top-nav {
+    margin-left: 0;
+  }
+
+  .background {
+    justify-content: space-around;
+    display: flex;
+  }
+
+  header,
+  main,
+  footer {
+    margin-left: 0;
   }
 }
