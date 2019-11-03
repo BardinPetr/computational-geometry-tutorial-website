@@ -1,9 +1,18 @@
 import './scss/base.scss';
-import 'materialize-css';
-import $ from "jquery";
+
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+
+require('materialize-css');
+
 
 $(document).ready(function () {
-  M.AutoInit();
+  const li = $('.lesson-img'),
+    hli = $('.halfpage-lesson-img');
+  li.tooltip();
+  hli.tooltip();
+  li.materialbox();
+  hli.materialbox();
 });
 
 // document.addEventListener('DOMContentLoaded', function () {

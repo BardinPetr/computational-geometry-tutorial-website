@@ -252,23 +252,23 @@ footer {
   margin: 50px;
 }
 
-.lesson-image-fw {
+.lesson-img {
   @extend .responsive-img;
-  // @extend .materialboxed;
+  @extend .materialboxed;
 }
 
 .right-arrow-svg {
   @extend .col;
   @extend .s2;
-  @extend .lesson-image-fw;
+  @extend .lesson-img;
   background: url("../assets/svg/arrow.svg");
   width: 60px !important;
   height: 60px !important;
   padding: 30px !important;
 }
 
-.halfpage-img {
-  @extend .lesson-image-fw;
+.halfpage-lesson-img {
+  @extend .lesson-img;
   @extend .col;
   @extend .s6;
 }
