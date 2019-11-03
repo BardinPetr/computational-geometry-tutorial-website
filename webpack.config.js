@@ -1,12 +1,17 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin'),
+const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin'),
+  MiniCssExtractPlugin = require('mini-css-extract-plugin'),
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
   CopyWebpackPlugin = require('copy-webpack-plugin'),
   path = require('path');
 
 module.exports = {
-  entry: './src/app.js',
+  entry: {
+    main: './src/app.js',
+    lesson: './src/lesson.js'
+  },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle-[name].js',
+    path: __dirname + '/dist'
   },
   module: {
     rules: [{
@@ -44,6 +49,10 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: 'src/assets',
       to: 'assets'
+    }]),
+    new CopyWebpackPlugin([{
+      from: 'src/pages',
+      to: '.'
     }]),
     new CopyWebpackPlugin([{
       from: 'src/index.html',

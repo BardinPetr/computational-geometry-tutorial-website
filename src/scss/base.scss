@@ -17,16 +17,27 @@ footer {
   margin-left: 300px;
 
   iframe {
+    height: -webkit-fill-available;
     border: none;
-    padding: 0px
+    padding: 0px;
   }
+}
+
+.container-lesson {
+  @extend .container;
+  padding-bottom: 100px;
 }
 
 .top-nav {
   margin-left: 300px;
 
   .brand-logo {
+    width: fit-content;
     padding-left: 10px;
+
+    @media #{$medium-and-down} {
+      font-size: 22px;
+    }
   }
 }
 
@@ -37,6 +48,7 @@ footer {
 
 .menu-lesson-name {
   @extend .waves-effect;
+  word-break: break-word;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
   height: fit-content !important;
@@ -44,7 +56,8 @@ footer {
   float: left;
 }
 
-#slide-out::-webkit-scrollbar {
+#slide-out::-webkit-scrollbar,
+html::-webkit-scrollbar {
   display: none;
 }
 
@@ -82,6 +95,7 @@ footer {
 
 @media only screen and (max-width : 992px) {
   .slideout-close-button {
+    color: white;
     cursor: pointer;
     display: block;
   }
@@ -193,6 +207,11 @@ footer {
   li {
     line-height: normal;
   }
+
+  .topics-li {
+    @extend .subheader;
+    font-size: 20px;
+  }
 }
 
 
@@ -223,4 +242,33 @@ footer {
   footer {
     margin-left: 0;
   }
+}
+
+/* Lesson page styles */
+.get-started-button {
+  @extend .btn-large;
+  @extend .waves-effect;
+  @extend .waves-light;
+  margin: 50px;
+}
+
+.lesson-image-fw {
+  @extend .responsive-img;
+  // @extend .materialboxed;
+}
+
+.right-arrow-svg {
+  @extend .col;
+  @extend .s2;
+  @extend .lesson-image-fw;
+  background: url("../assets/svg/arrow.svg");
+  width: 60px !important;
+  height: 60px !important;
+  padding: 30px !important;
+}
+
+.halfpage-img {
+  @extend .lesson-image-fw;
+  @extend .col;
+  @extend .s6;
 }

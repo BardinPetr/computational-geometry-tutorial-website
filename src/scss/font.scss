@@ -34,4 +34,12 @@
   body {
     font-family: DaxPro;
   }
+}  
+
+h1 {
+  color: $primary-color;
+}
+
+hr {
+  @extend .divider;
 }
