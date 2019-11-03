@@ -1,9 +1,7 @@
-const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin'),
-  MiniCssExtractPlugin = require('mini-css-extract-plugin'),
-  HtmlWebpackPlugin = require('html-webpack-plugin'),
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'),
   CopyWebpackPlugin = require('copy-webpack-plugin'),
   path = require('path');
-
+  
 module.exports = {
   entry: {
     main: './src/app.js',
