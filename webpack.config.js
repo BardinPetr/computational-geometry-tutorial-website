@@ -1,5 +1,8 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin'),
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'),
+  MiniCssExtractPlugin = require('mini-css-extract-plugin'),
+  UglifyJsPlugin = require('uglifyjs-webpack-plugin'),
   CopyWebpackPlugin = require('copy-webpack-plugin'),
+  TerserJSPlugin = require('terser-webpack-plugin'),
   path = require('path');
   
 module.exports = {
@@ -57,6 +60,9 @@ module.exports = {
       to: 'index.html'
     }])
   ],
+  optimization: {
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({}), new UglifyJsPlugin()],
+  },
   devServer: {
     contentBase: path.join(__dirname),
     host: '0.0.0.0',

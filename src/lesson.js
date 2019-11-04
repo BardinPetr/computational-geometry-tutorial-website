@@ -1,4 +1,3 @@
-import './scss/base.scss';
 import $ from 'jquery';
 
 window.$ = window.jQuery = $;

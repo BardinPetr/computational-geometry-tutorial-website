@@ -6,7 +6,7 @@ window.$ = window.jQuery = $;
 require('materialize-css');
 
 const lessons = [{
-  name: "Поиск наименьшей выпуклой оболчки методом Грехэма",
+  name: "Поиск наименьшей выпуклой оболчки методом Грэхема",
   href: "1.html",
   difficulty: 1 // 0-2 means easy-difficult
 }];
